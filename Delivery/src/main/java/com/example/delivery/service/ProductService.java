@@ -55,6 +55,10 @@ public class ProductService {
         Optional<Product> optionalProductToEdit = productRepository.findById(name);
         Product productToEdit = optionalProductToEdit.get();
 
+        if (productRequest.getName() == null){
+            throw new IllegalArgumentException("Product name cannot be empty");
+        }
+
         if (optionalProductToEdit.isEmpty()) {
             throw new ProductNotFoundException("Product with name: "
                     + name

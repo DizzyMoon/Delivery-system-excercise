@@ -39,7 +39,7 @@ public class ProductRestController {
         ProductResponse updatedProduct = productService.updateProduct(name, productRequest);
         return ResponseEntity.status(HttpStatus.OK).body("Product with name: \""
         + name
-        + "\" created successfully.");
+        + "\" updated successfully.");
     }
 
     @DeleteMapping("/product/{name}")
